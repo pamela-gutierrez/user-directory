@@ -27,7 +27,7 @@ function TableRows(props) {
             <tr>
                 {/* Email */}
                 <th scope="row">3</th>
-                <td>{props.email}</td>
+                <td>{props.dob.date}</td>
             </tr>
         </tbody>
     )
