@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 // import Container from "./components/Container";
 import TableRows from "./components/TableRows";
-import TableHead from "./components/TableHead";
+// import TableHead from "./components/TableHead";
 import API from "./utils/API.js";
 
 
@@ -40,13 +40,15 @@ function App() {
             <th scope="col">DOB</th>
           </tr>
         </thead>
-        {employees.map((employees, index) => {
-          <TableRows
-            name={capitalizeFirstLetter(employee.firstname) + " " + capitalizeFirstLetter(employee.lastname)}
-            email={employees.email}
-            image={employees.picture.large}
-            dob={employees.dob}
-          />
+        {employees.map((employee, index) => {
+          return (
+            <TableRows
+              name={capitalizeFirstLetter(employee.firstname) + " " + capitalizeFirstLetter(employee.lastname)}
+              email={employee.email}
+              // image={employee.picture.thumbnail}
+              dob={employee.dob}
+            />
+          )
         })}
 
       </table>

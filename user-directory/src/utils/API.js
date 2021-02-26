@@ -10,7 +10,7 @@ export default {
                         firstname: employee.name.first,
                         lastname: employee.name.last,
                         email: employee.email,
-                        image: employee.picture.large,
+                        // image: employee.picture.thumbnail,
                         dob: employee.dob
                     };
                 });
