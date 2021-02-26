@@ -1,17 +1,17 @@
 import axios from "axios";
 
 export default {
-    getUsers: function () {
+    getEmployees: function () {
         return new Promise((resolve, reject) => {
             axios.get("https://randomuser.me/api/?results=15").then((res) => {
-                const users = res.data.results;
-                const results = users.map((user) => {
+                const employees = res.data.results;
+                const results = employees.map((employee) => {
                     return {
-                        firstname: user.name.first,
-                        lastname: user.name.last,
-                        email: user.email,
-                        image: user.picture.large,
-                        dob: user.dob
+                        firstname: employee.name.first,
+                        lastname: employee.name.last,
+                        email: employee.email,
+                        image: employee.picture.large,
+                        dob: employee.dob
                     };
                 });
                 resolve(results);

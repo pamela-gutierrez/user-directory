@@ -3,15 +3,15 @@ import API from "../utils/API";
 
 
 function Home() {
-    const [users, setUser] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         loadEmployees();
     }, []);
 
-    // function capitalizeFirstLetter(string = "") {
-    //     return string.charAt(0).toUpperCase() + string.slice(1);
-    //   }
+    function capitalizeFirstLetter(string = "") {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     // function searchEmployees(){
 
@@ -29,6 +29,8 @@ function Home() {
     // }
 
 }
+
+export default Home;
 
 
 

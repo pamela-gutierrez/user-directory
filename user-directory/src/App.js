@@ -1,16 +1,26 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useState } from "react";
 // import Home from "./pages/Home";
 import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 // import Container from "./components/Container";
 import TableRows from "./components/TableRows";
 import TableHead from "./components/TableHead";
-// import API from "../utils/API";
+import API from "./utils/API.js";
 
 
 function App() {
 
-  // const [users, setUsers] = useState([]);
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    loadEmployees();
+  }, [])
+
+  function loadEmployees() {
+    API.getEmployees().then((employees) => {
+      setEmployees(employees.sort())
+    })
+  }
 
   function capitalizeFirstLetter(string = "") {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -30,12 +40,15 @@ function App() {
             <th scope="col">DOB</th>
           </tr>
         </thead>
-        <TableRows
-          name={capitalizeFirstLetter(user.firstname) + " " + capitalizeFirstLetter(user.lastname)}
-          email={users.email}
-          image={users.picture.large}
-          dob={users.dob}
-        />
+        {employees.map((employees, index) => {
+          <TableRows
+            name={capitalizeFirstLetter(employee.firstname) + " " + capitalizeFirstLetter(employee.lastname)}
+            email={employees.email}
+            image={employees.picture.large}
+            dob={employees.dob}
+          />
+        })}
+
       </table>
     </div>
   );
