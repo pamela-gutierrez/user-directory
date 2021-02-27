@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 // import Container from "./components/Container";
 import TableRows from "./components/TableRows";
-import TableHead from "./components/TableHead";
+// import TableHead from "./components/TableHead";
 import API from "./utils/API.js";
 
 
@@ -32,7 +32,16 @@ function App() {
       <SearchForm />
       <table className="table table-striped">
         {/* <th scope="row"></th> */}
-        <TableHead />
+        {/* <TableHead /> */}
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">DOB</th>
+          </tr>
+        </thead>
         <tbody>
           {employees.map((employee, index) => {
             return (
@@ -47,7 +56,6 @@ function App() {
           })}
         </tbody>
       </table>
-
     </div>
   );
 }
