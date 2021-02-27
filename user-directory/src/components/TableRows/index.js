@@ -3,33 +3,22 @@ import React from "react";
 
 function TableRows(props) {
     return (
-        <tbody>
-            <tr>
-                {/* Image */}
-                <th scope="row">1</th>
-                <td>{props.image}</td>
-            </tr>
-            <tr>
-                {/* Name */}
-                <th scope="row">2</th>
-                <td>{props.name}</td>
-            </tr>
-            <tr>
-                {/* Phone */}
-                <th scope="row">3</th>
-                <td>102 309 0349</td>
-            </tr>
-            <tr>
-                {/* Email */}
-                <th scope="row">3</th>
-                <td>{props.email}</td>
-            </tr>
-            <tr>
-                {/* Email */}
-                <th scope="row">3</th>
-                <td>{props.email}</td>
-            </tr>
-        </tbody>
+        // <tbody>
+        <tr>
+            {/* Image */}
+            <th scope="row"></th>
+            <td>
+                <img alt="employee" src={props.image} />
+            </td>
+            <td>{props.name}</td>
+            <td>{props.phone}</td>
+            <td>{props.image}</td>
+            <td>{props.name}</td>
+            <td>{props.email}</td>
+            <td>{props.dob.date}</td>
+        </tr>
+
+        // </tbody>
     )
 }
 

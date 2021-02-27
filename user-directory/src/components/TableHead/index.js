@@ -2,6 +2,8 @@ import React from "react";
 
 function TableHead() {
     return (
+        // <table className="table table-striped">
+
         <thead>
             <tr>
                 <th scope="col">Image</th>
@@ -11,6 +13,7 @@ function TableHead() {
                 <th scope="col">DOB</th>
             </tr>
         </thead>
+        // </table>
     )
 }
 
