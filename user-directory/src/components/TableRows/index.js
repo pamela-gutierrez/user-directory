@@ -3,6 +3,7 @@ import React from "react";
 
 function TableRows(props) {
     return (
+
         // <tbody>
         <tr>
             {/* Image */}
@@ -19,6 +20,7 @@ function TableRows(props) {
         </tr>
 
         // </tbody>
+
     )
 }
 
